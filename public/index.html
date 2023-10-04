@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width,user-scalable=0,initial-scale=1.0"
     />
     <title>Back Country</title>
-
     <style>
       * {
         padding: 0;
@@ -18,6 +17,7 @@
       html,
       body {
         height: 100%;
+        overflow: hidden;
       }
 
       #frame {
@@ -30,9 +30,34 @@
         z-index: 2;
         -webkit-app-region: drag;
       }
+
+      canvas,
+      main {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        user-select: none;
+        color: #ffe8c6;
+        font: 15vmin Impact;
+      }
+      [onclick],
+      a {
+        cursor: pointer;
+        color: #ffe8c6;
+      }
+      [onclick]:hover,
+      a:hover {
+        color: #fff;
+      }
     </style>
   </head>
   <body>
     <div id="frame"></div>
+    <canvas></canvas>
+    <canvas></canvas>
+    <main></main>
+    <script src="./app/index.js"></script>
   </body>
 </html>
