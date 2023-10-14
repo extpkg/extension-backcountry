@@ -4679,7 +4679,9 @@
             }
         </div>
 
-        <div onclick="$(${13 /* Spend money and GoToTown */});" style="
+        <div onclick="$(${
+          state.Gold > 998 ? 13 : 3 /* Spend money and GoToTown */
+        });" style="
             font: italic bold small-caps 7vmin serif;
             position: absolute;
             bottom: 5%;
