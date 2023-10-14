@@ -1,7 +1,7 @@
 {
   "name": "extension-name",
-  "version": "1.0.1",
-  "description": "Extension description",
+  "version": "1.0.2",
+  "description": "Hunt bounties, capture outlaws, claim rewards; thrilling wild west chase!",
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production node ./scripts/build.mjs",
