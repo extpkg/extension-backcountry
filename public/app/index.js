@@ -1431,7 +1431,7 @@
         e.Add({
           Translation: [0, 5, 24],
           Rotation: D([], 0, 90, 0),
-          Using: [N(!1, [8, 8, 8]), Q(5)],
+          Using: e.BountySeed ? [] : [N(!1, [8, 8, 8]), Q(5)],
           Children: [
             _(e),
             {
