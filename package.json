@@ -1,6 +1,6 @@
 {
   "name": "extension-name",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Hunt bounties, capture outlaws, claim rewards; thrilling wild west chase!",
   "type": "module",
   "scripts": {

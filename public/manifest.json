@@ -3,7 +3,7 @@
   "name": "Backcountry",
   "short_name": "Backcountry",
   "description": "Hunt bounties, capture outlaws, claim rewards; thrilling wild west chase!",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": "EXT, Inc.",
   "icons": {
     "128": "./assets/128.png",
