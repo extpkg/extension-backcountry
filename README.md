@@ -1,6 +1,6 @@
 # Back Country
 
-Extension description
+Hunt bounties, capture outlaws, claim rewards; thrilling wild west chase!
 
 ## Build
 
