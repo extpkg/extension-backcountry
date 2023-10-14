@@ -3,7 +3,7 @@
   "name": "Back Country",
   "short_name": "Back Country",
   "description": "Extension description",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "EXT, Inc.",
   "icons": {
     "128": "./assets/128.png",
