@@ -3110,6 +3110,7 @@
         game.WorldFunc = world_town;
         setTimeout(game.WorldFunc, 0, game, false, game.ChallengeLevel * 1000);
         game.Gold += game.ChallengeLevel * 1000;
+        window.localStorage.setItem("gold", game.Gold);
         game.ChallengeLevel += 1;
         game.PlayerState = 0 /* Playing */;
         game.PlayerXY = undefined;
@@ -3118,6 +3119,7 @@
       }
       case 2 /* EndChallenge */: {
         game.Gold = 0;
+        window.localStorage.setItem("gold", game.Gold);
         game.ChallengeLevel = 1;
         game.PlayerState = 0 /* Playing */;
         game.PlayerXY = undefined;
@@ -3150,7 +3152,6 @@
       case 11 /* ChangePlayerSeed */: {
         if (game.Gold > 998) {
           game.PlayerSeed = Math.random() * 10000;
-          game.Gold -= 999;
         }
         setTimeout(game.WorldFunc, 0, game);
         break;
@@ -3186,6 +3187,7 @@
         let [entity] = args;
         let value = integer(100, 1000);
         game.Gold += value;
+        window.localStorage.setItem("gold", game.Gold);
         game[5 /* AudioSource */][entity].Trigger = snd_gold;
         game.Add({
           Translation: game[0 /* Transform */][game.Player].Translation.slice(),
@@ -3238,6 +3240,16 @@
         game.Destroy(entity);
         let health = game[14 /* Health */][game.Player];
         health.Current = health.Max;
+        break;
+      }
+      case 13 /* Spend money and GoToTown */: {
+        game.Gold -= 999;
+        window.localStorage.setItem("gold", game.Gold);
+        game.Audio.close();
+        game.Audio = new AudioContext();
+        game.WorldFunc = world_town;
+        setTimeout(game.WorldFunc, 0, game);
+        break;
       }
     }
   }
@@ -4657,7 +4669,7 @@
         ">
             ${
               state.Gold > 998
-                ? "Change Outfit - $999"
+                ? "Change Outfit"
                 : `
                         <s>Change Outfit</s>
                         <div style="font: italic 5vmin serif;">
@@ -4667,13 +4679,13 @@
             }
         </div>
 
-        <div onclick="$(${3 /* GoToTown */});" style="
+        <div onclick="$(${13 /* Spend money and GoToTown */});" style="
             font: italic bold small-caps 7vmin serif;
             position: absolute;
             bottom: 5%;
             right: 10%;
         ">
-            Confirm
+            ${state.Gold > 998 ? "Confirm - 999$" : "Close"}
         </div>
     `;
   }
@@ -4813,7 +4825,7 @@
       this.ChallengeLevel = 1;
       this.BountySeed = 0;
       this.PlayerState = 0 /* Playing */;
-      this.Gold = 0;
+      this.Gold = parseInt(window.localStorage.getItem("gold") ?? 0, 10);
       this.MonetizationEnabled = true;
       this.Models = [];
       this.Palette = palette;
