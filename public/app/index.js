@@ -4598,7 +4598,7 @@
             margin: 5vh auto;
             text-align: center;
         ">
-            YOU DIE
+            YOU DIED
             <div style="
                 font: italic 5vmin serif;
             ">
