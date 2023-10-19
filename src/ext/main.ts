@@ -7,7 +7,7 @@ type Instance = {
 
 let instance: Instance | null = null;
 
-const title = "Back Country";
+const title = "Backcountry";
 
 const focusInstance = async () => {
   if (instance) {
