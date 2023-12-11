@@ -13,3 +13,6 @@ Hunt bounties, capture outlaws, claim rewards; thrilling wild west chase!
 
 Run `npm run dev` to watch `src` and `public` directories and rebuild the
 project on changes
+
+## Source
+https://github.com/piesku/backcountry
